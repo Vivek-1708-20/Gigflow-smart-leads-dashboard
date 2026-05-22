@@ -249,7 +249,7 @@ function App() {
               <div className='relative z-10'>
                 <h2 className='text-5xl font-extrabold mb-5 leading-tight'>
                   Smart CRM for <br />
-                  Modern Sales Teams 🚀
+                  Modern Sales Teams 
                 </h2>
 
                 <p className='text-lg text-white/80 max-w-2xl mb-8'>
