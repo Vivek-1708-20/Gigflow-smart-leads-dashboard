@@ -24,7 +24,7 @@ function App() {
   const fetchLeads = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/leads?search=${search}&status=${statusFilter}`,
+        `https://gigflow-backend-vi1g.onrender.com/api/leads?search=${search}&status=${statusFilter}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -49,7 +49,7 @@ function App() {
       }
 
       await axios.post(
-        'http://localhost:5000/api/leads',
+        'https://gigflow-backend-vi1g.onrender.com/api/leads',
         formData,
         {
           headers: {
@@ -77,7 +77,7 @@ function App() {
   ) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/leads/${id}`,
+        `https://gigflow-backend-vi1g.onrender.com/api/leads/${id}`,
         { status },
         {
           headers: {
@@ -101,7 +101,7 @@ function App() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/leads/${id}`,
+        `https://gigflow-backend-vi1g.onrender.com/api/leads/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
