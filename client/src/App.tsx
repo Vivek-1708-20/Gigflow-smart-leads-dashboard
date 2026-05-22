@@ -37,7 +37,7 @@ function App() {
       console.log(error);
     }
   };
-
+ console.log(token);
   const createLead = async () => {
     try {
       if (

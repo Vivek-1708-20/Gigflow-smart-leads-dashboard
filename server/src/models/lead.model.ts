@@ -1,6 +1,6 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose from 'mongoose';
 
-const leadSchema = new Schema(
+const leadSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -14,14 +14,12 @@ const leadSchema = new Schema(
 
     status: {
       type: String,
-      enum: ['New', 'Contacted', 'Qualified', 'Lost'],
       default: 'New',
     },
 
     source: {
       type: String,
-      enum: ['Website', 'Instagram', 'Referral'],
-      required: true,
+      default: 'Website',
     },
   },
   {
@@ -29,6 +27,7 @@ const leadSchema = new Schema(
   }
 );
 
-const Lead = mongoose.model('Lead', leadSchema);
-
-export default Lead;
+export default mongoose.model(
+  'Lead',
+  leadSchema
+);
