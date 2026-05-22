@@ -129,10 +129,6 @@ function App() {
     (l) => l.status === 'Contacted'
   ).length;
 
-  // const lostLeads = leads.filter(
-  //   (l) => l.status === 'Lost'
-  // ).length;
-
   const conversionRate =
     totalLeads > 0
       ? (
