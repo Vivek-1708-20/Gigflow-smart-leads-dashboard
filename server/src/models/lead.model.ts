@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const leadSchema = new mongoose.Schema(
   {
@@ -14,12 +14,12 @@ const leadSchema = new mongoose.Schema(
 
     status: {
       type: String,
-      default: 'New',
+      default: "New",
     },
 
     source: {
       type: String,
-      default: 'Website',
+      default: "Website",
     },
   },
   {
@@ -27,7 +27,4 @@ const leadSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model(
-  'Lead',
-  leadSchema
-);
+export default mongoose.model("Lead", leadSchema);
