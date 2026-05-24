@@ -12,21 +12,28 @@ export const getLeads = async (req: any, res: any) => {
   }
 };
 
-export const createLead = async (req: any, res: any) => {
+export const createLead = async (
+  req: any,
+  res: any
+) => {
   try {
-    const lead = await Lead.create({
-      name: req.body.name,
-      email: req.body.email,
+    console.log(req.body);
+
+    const lead = new Lead({
+      name: req.body.name || "Unknown",
+      email: req.body.email || "test@gmail.com",
       status: req.body.status || "New",
       source: req.body.source || "Website",
     });
 
-    res.status(201).json(lead);
-  } catch (error) {
-    console.log(error);
+    const savedLead = await lead.save();
+
+    res.status(201).json(savedLead);
+  } catch (error: any) {
+    console.log("CREATE LEAD ERROR:", error);
 
     res.status(500).json({
-      message: "Server Error",
+      message: error.message,
     });
   }
 };
