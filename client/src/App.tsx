@@ -32,7 +32,7 @@ function App() {
         }
       );
 
-      setLeads(res.data.data);
+      setLeads(res.data);
     } catch (error) {
       console.log(error);
     }
