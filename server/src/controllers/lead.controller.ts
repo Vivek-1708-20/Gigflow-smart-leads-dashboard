@@ -1,11 +1,35 @@
 import Lead from "../models/lead.model";
 
-export const getLeads = async (req: any, res: any) => {
+export const getLeads = async (
+  req: any,
+  res: any
+) => {
   try {
-    const leads = await Lead.find();
+    const search =
+      req.query.search || "";
+
+    const status =
+      req.query.status || "";
+
+    let query: any = {};
+
+    if (search) {
+      query.name = {
+        $regex: search,
+        $options: "i",
+      };
+    }
+
+    if (status) {
+      query.status = status;
+    }
+
+    const leads = await Lead.find(query);
 
     res.json(leads);
   } catch (error) {
+    console.log(error);
+
     res.status(500).json({
       message: "Server Error",
     });
