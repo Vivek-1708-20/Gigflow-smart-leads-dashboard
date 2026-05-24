@@ -353,7 +353,7 @@ function App() {
 
         {activeTab === 'leads' && (
           <>
-            {/* <div className='bg-[#1e293b] p-6 rounded-2xl shadow-xl mb-10'>
+            <div className='bg-[#1e293b] p-6 rounded-2xl shadow-xl mb-10'>
               <h2 className='text-2xl font-bold mb-5'>
                 Create New Lead
               </h2>
@@ -427,7 +427,7 @@ function App() {
                   Add Lead
                 </button>
               </div>
-            </div> */}
+            </div>
 
             <div className='flex flex-wrap gap-4 mb-8'>
               <input
