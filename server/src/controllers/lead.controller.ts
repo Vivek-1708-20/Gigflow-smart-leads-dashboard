@@ -1,4 +1,4 @@
-import Lead from "../models/Lead";
+import Lead from "../models/lead.model";
 
 export const getLeads = async (req: any, res: any) => {
   try {
