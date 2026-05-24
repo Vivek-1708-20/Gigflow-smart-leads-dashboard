@@ -18,7 +18,7 @@ export const createLead = async (
 ) => {
   try {
     console.log(req.body);
-   console.log(error);
+   console.log(Error);
     const lead = new Lead({
       name: req.body.name || "Unknown",
       email: req.body.email || "test@gmail.com",
